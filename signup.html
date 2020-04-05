@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="" />
-    <meta name="generator" content="Jekyll v3.8.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Newsletter Signup</title>
 
     <link
@@ -23,19 +23,27 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" action="/" method="POST">
       <h1 class="h3 mb-3 font-weight-normal">Signup to my newsletter !</h1>
       <input
         type="text"
         class="form-control"
+        name="firstName"
         placeholder="Firstname"
         required
         autofocus
       />
-      <input type="text" class="form-control" placeholder="Lastname" required />
+      <input
+        type="text"
+        class="form-control"
+        name="lastName"
+        placeholder="Lastname"
+        required
+      />
       <input
         type="email"
         class="form-control"
+        name="email"
         placeholder="Email address"
         required
       />
