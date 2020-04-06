@@ -34,10 +34,10 @@ app.post("/", function (req, res) {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us19.api.mailchimp.com/3.0/lists/b8ac24976c";
+  const url = "https://us19.api.mailchimp.com/3.0/lists/" + process.env.S3_KEY;
   const options = {
     method: "POST",
-    auth: "TheoBernard97:4f0392c328cbc31927808c86a3d81a59-us19",
+    auth: "TheoBernard97:" + process.env.S3_SECRET,
   };
 
   const request = https.request(url, options, function (response) {
@@ -54,6 +54,10 @@ app.post("/", function (req, res) {
 
   request.write(jsonData);
   request.end();
+});
+
+app.get("/failure", function (req, res) {
+  res.redirect("/");
 });
 
 app.listen(process.env.PORT || 3000, function () {
